@@ -6,7 +6,7 @@ const onSocket = (io) => {
       if (!users.some((user) => user.name === name)) {
         users.push({ name, socketId: socket.id }); 
       }
-      io.emit("global:message", `${name} is joined!`);
+      io.emit("global:message", `${name} joined!`);
     });
 
     socket.on("message:send", (payload) => {
